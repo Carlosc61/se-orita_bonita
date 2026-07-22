@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/hola.css">
+</head>
+<body>
+    <!-- =====================================
+         AUDIO
+    ====================================== -->
+
+    <audio
+        id="musica"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="music/musica.mp3"
+            type="audio/mpeg"
+        >
+
+    </audio>
+
+    <!-- =====================================
+         CIELO
+    ====================================== -->
+
+    <div class="cielo">
+
+        <div class="estrellas"></div>
+
+        <div class="estrellas estrellas-lejanas"></div>
+
+        <div class="estrellas estrellas-cercanas"></div>
+
+    </div>
+
+    
+    <!-- =====================================
+         LUNA
+    ====================================== -->
+
+    <div class="luna">
+
+        <div class="luna-brillo"></div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         CONTENEDOR PRINCIPAL
+    ====================================== -->
+
+    <main class="contenedor">
+
+
+        <!-- =================================
+             ESCENA 1
+        ================================== -->
+
+        <section
+            id="escena1"
+            class="escena activa"
+        >
+
+            <div class="codigo-decorativo">
+
+                &lt; hello_world /&gt;
+
+            </div>
+
+
+            <h1>
+
+                Cecilia
+
+            </h1>
+
+
+            <p class="texto-principal">
+
+                Hay cosas que no necesitan
+                demasiadas palabras...
+
+            </p>
+
+
+            <p class="texto-secundario">
+
+                A veces solo necesitan
+                un pequeño momento.
+
+            </p>
+
+
+            <button
+                id="btnComenzar"
+                class="boton"
+            >
+
+                ✨ Mira el cielo
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ESCENA 2
+        ================================== -->
+
+        <section
+            id="escena2"
+            class="escena"
+        >
+
+            <div class="constelacion">
+
+                <div class="estrella estrella1"></div>
+
+                <div class="estrella estrella2"></div>
+
+                <div class="estrella estrella3"></div>
+
+                <div class="estrella estrella4"></div>
+
+                <div class="estrella estrella5"></div>
+
+                <div class="estrella estrella6"></div>
+
+
+                <svg
+                    class="lineas-constelacion"
+                    viewBox="0 0 500 350"
+                >
+
+                    <line
+                        x1="100"
+                        y1="80"
+                        x2="200"
+                        y2="40"
+                    />
+
+                    <line
+                        x1="200"
+                        y1="40"
+                        x2="300"
+                        y2="80"
+                    />
+
+                    <line
+                        x1="300"
+                        y1="80"
+                        x2="400"
+                        y2="40"
+                    />
+
+                    <line
+                        x1="100"
+                        y1="80"
+                        x2="150"
+                        y2="180"
+                    />
+
+                    <line
+                        x1="150"
+                        y1="180"
+                        x2="250"
+                        y2="240"
+                    />
+
+                    <line
+                        x1="250"
+                        y1="240"
+                        x2="350"
+                        y2="180"
+                    />
+
+                    <line
+                        x1="350"
+                        y1="180"
+                        x2="400"
+                        y2="40"
+                    />
+
+                    <line
+                        x1="150"
+                        y1="180"
+                        x2="350"
+                        y2="180"
+                    />
+
+                </svg>
+
+
+            </div>
+
+
+            <h2>
+
+                Incluso entre millones de estrellas...
+
+            </h2>
+
+
+            <p>
+
+                Algunas terminan formando
+                algo especial.
+
+            </p>
+
+
+            <button
+                id="btnConstelacion"
+                class="boton"
+            >
+
+                🌌 Sigue mirando
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ESCENA 3
+        ================================== -->
+
+        <section
+            id="escena3"
+            class="escena"
+        >
+
+
+            <div class="universo-mensaje">
+
+                <div class="corazon-estrellas">
+
+                    ✦
+
+                </div>
+
+
+                <h2>
+
+                    Y pensé en crear esto...
+
+                </h2>
+
+
+                <p>
+
+                    No para pedirte nada.
+
+                </p>
+
+
+                <p>
+
+                    No para cambiar nada.
+
+                </p>
+
+
+                <p class="destacado">
+
+                    Solo para regalarte
+                    un pequeño momento bonito.
+
+                </p>
+
+
+            </div>
+
+
+            <button
+                id="btnJardin"
+                class="boton"
+            >
+
+                🌱 Ver qué florece
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ESCENA 4
+        ================================== -->
+
+        <section
+            id="escena4"
+            class="escena"
+        >
+
+
+            <div class="jardin">
+
+
+                <div class="montana"></div>
+
+
+                <div class="luna-jardin">
+
+                    🌙
+
+                </div>
+
+
+                <div class="luciernaga l1">
+
+                    ✨
+
+                </div>
+
+
+                <div class="luciernaga l2">
+
+                    ✨
+
+                </div>
+
+
+                <div class="luciernaga l3">
+
+                    ✨
+
+                </div>
+
+
+                <div class="luciernaga l4">
+
+                    ✨
+
+                </div>
+
+
+                <!-- FLOR -->
+
+                <div
+                    id="flor"
+                    class="flor"
+                >
+
+                    <div class="tallo"></div>
+
+                    <div class="hoja hoja1"></div>
+
+                    <div class="hoja hoja2"></div>
+
+                    <div class="petalo p1"></div>
+
+                    <div class="petalo p2"></div>
+
+                    <div class="petalo p3"></div>
+
+                    <div class="petalo p4"></div>
+
+                    <div class="centro-flor"></div>
+
+                </div>
+
+
+                <div class="suelo"></div>
+
+
+            </div>
+
+
+            <h2>
+
+                Hasta las noches más oscuras
+                pueden tener flores.
+
+            </h2>
+
+
+            <p>
+
+                Solo hay que darles un poco de tiempo.
+
+            </p>
+
+
+            <button
+                id="btnCarta"
+                class="boton"
+            >
+
+                💌 Hay algo que quería decirte
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ESCENA 5
+        ================================== -->
+
+        <section
+            id="escena5"
+            class="escena"
+        >
+
+
+            <div class="carta">
+
+
+                <div class="icono-carta">
+
+                    💜
+
+                </div>
+
+
+                <h2>
+
+                    Para Cecilia
+
+                </h2>
+
+
+                <p>
+
+                    Quizás la vida a veces
+                    nos lleva por caminos
+                    que no esperábamos.
+
+                </p>
+
+
+                <p>
+
+                    Y quizás hay días en los que
+                    simplemente necesitamos
+                    dejar algunas cosas atrás.
+
+                </p>
+
+
+                <p>
+
+                    Por eso no quiero pedirte
+                    que cambies nada.
+
+                </p>
+
+
+                <p class="mensaje-especial">
+
+                    Solo quería que por unos minutos
+                    tuvieras un lugar bonito
+                    donde descansar la mente.
+
+                </p>
+
+
+                <div class="separador">
+
+                    ✦ ✦ ✦
+
+                </div>
+
+
+                <p>
+
+                    Esto está hecho completamente
+                    con código.
+
+                    <br>
+
+                    Pero la intención detrás de él
+                    es completamente real.
+
+                </p>
+
+
+                <div class="firma">
+
+                    — Carlos 💜
+
+                </div>
+
+
+            </div>
+
+
+            <button
+                id="btnFinal"
+                class="boton boton-final"
+            >
+
+                ✨ Una última cosa
+
+            </button>
+
+
+        </section>
+
+
+
+        <!-- =================================
+             ESCENA FINAL
+        ================================== -->
+
+        <section
+            id="escena6"
+            class="escena"
+        >
+
+
+            <div class="final-corazon">
+
+                💜
+
+            </div>
+
+
+            <h1>
+
+                Que seas feliz.
+
+            </h1>
+
+
+            <p>
+
+                De verdad.
+
+            </p>
+
+
+            <p class="final-pequeno">
+
+                Y que siempre encuentres
+                un motivo para volver a sonreír.
+
+            </p>
+
+
+            <div class="codigo-final">
+
+                &lt;/&gt; hecho con código
+                <br>
+                ♥ hecho con intención
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================
+         PARTICULAS
+    ====================================== -->
+
+    <div id="particulas"></div>
+
+
+
+    <!-- =====================================
+         JAVASCRIPT
+    ====================================== -->
+
+    <script src="js/hola.js"></script>
+
+</body>
+</html>
