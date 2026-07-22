@@ -1,0 +1,1992 @@
+/* =========================================
+   RESET
+========================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+body {
+
+    overflow: hidden;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: white;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            #21103d,
+            #090516 55%,
+            #020107 100%
+        );
+
+}
+
+
+/* =========================================
+   CIELO
+========================================= */
+
+.cielo {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+}
+
+
+.estrellas {
+
+    position: absolute;
+
+    inset: -100px;
+
+    background-image:
+
+        radial-gradient(
+            2px 2px at 20px 30px,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 80px 120px,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 150px 70px,
+            #ddd6fe,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 250px 180px,
+            white,
+            transparent
+        ),
+
+        radial-gradient(
+            2px 2px at 350px 100px,
+            #f5d0fe,
+            transparent
+        ),
+
+        radial-gradient(
+            1px 1px at 450px 250px,
+            white,
+            transparent
+        );
+
+    background-size:
+
+        500px
+        350px;
+
+    animation:
+
+        cieloMovimiento
+        40s
+        linear
+        infinite;
+
+}
+
+
+.estrellas-lejanas {
+
+    opacity:
+
+        0.25;
+
+    transform:
+
+        scale(1.5);
+
+    animation-duration:
+
+        80s;
+
+}
+
+
+.estrellas-cercanas {
+
+    opacity:
+
+        0.7;
+
+    transform:
+
+        scale(0.8);
+
+    animation-duration:
+
+        25s;
+
+    animation-direction:
+
+        reverse;
+
+}
+
+
+@keyframes cieloMovimiento {
+
+    0% {
+
+        transform:
+
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    100% {
+
+        transform:
+
+            translate(
+                -200px,
+                -150px
+            );
+
+    }
+
+}
+
+
+/* =========================================
+   LUNA
+========================================= */
+
+.luna {
+
+    position: fixed;
+
+    top: 8%;
+
+    right: 10%;
+
+    width: 100px;
+
+    height: 100px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle at 35% 30%,
+            #ffffff,
+            #e9d5ff 55%,
+            #c4b5fd
+        );
+
+    box-shadow:
+
+        0
+        0
+        60px
+        rgba(
+            196,
+            181,
+            253,
+            0.5
+        );
+
+    z-index: 2;
+
+    animation:
+
+        lunaFlotar
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.luna::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+
+    height: 90px;
+
+    border-radius: 50%;
+
+    background:
+
+        #0b0618;
+
+    top: -10px;
+
+    left: 25px;
+
+}
+
+
+@keyframes lunaFlotar {
+
+    0%,
+    100% {
+
+        transform:
+
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+
+            translateY(-15px);
+
+    }
+
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.contenedor {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 10;
+
+}
+
+
+/* =========================================
+   ESCENAS
+========================================= */
+
+.escena {
+
+    position: absolute;
+
+    width: 90%;
+
+    max-width: 700px;
+
+    text-align: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+
+        translateY(40px)
+        scale(0.95);
+
+    transition:
+
+        opacity
+        1s
+        ease,
+
+        transform
+        1s
+        ease,
+
+        visibility
+        1s;
+
+}
+
+
+.escena.activa {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================
+   TEXTOS
+========================================= */
+
+.codigo-decorativo {
+
+    font-family:
+
+        monospace;
+
+    color:
+
+        #a78bfa;
+
+    font-size:
+
+        0.9rem;
+
+    margin-bottom:
+
+        15px;
+
+    opacity:
+
+        0.7;
+
+}
+
+
+h1 {
+
+    font-size:
+
+        clamp(
+            3.5rem,
+            10vw,
+            6rem
+        );
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #d8b4fe,
+            #f9a8d4
+        );
+
+    -webkit-background-clip:
+
+        text;
+
+    -webkit-text-fill-color:
+
+        transparent;
+
+    margin-bottom:
+
+        25px;
+
+}
+
+
+h2 {
+
+    font-size:
+
+        clamp(
+            1.6rem,
+            4vw,
+            2.5rem
+        );
+
+    margin-bottom:
+
+        20px;
+
+}
+
+
+.texto-principal {
+
+    font-size:
+
+        1.3rem;
+
+    color:
+
+        #ede9fe;
+
+    line-height:
+
+        1.8;
+
+}
+
+
+.texto-secundario {
+
+    font-size:
+
+        1rem;
+
+    color:
+
+        #a78bfa;
+
+    margin-top:
+
+        10px;
+
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.boton {
+
+    margin-top:
+
+        35px;
+
+    padding:
+
+        15px
+        30px;
+
+    border:
+
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.2
+        );
+
+    border-radius:
+
+        50px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #db2777
+        );
+
+    color:
+
+        white;
+
+    font-size:
+
+        1rem;
+
+    cursor:
+
+        pointer;
+
+    box-shadow:
+
+        0
+        10px
+        30px
+        rgba(
+            124,
+            58,
+            237,
+            0.4
+        );
+
+    transition:
+
+        all
+        0.3s
+        ease;
+
+}
+
+
+.boton:hover {
+
+    transform:
+
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+
+        0
+        15px
+        45px
+        rgba(
+            219,
+            39,
+            119,
+            0.5
+        );
+
+}
+
+
+/* =========================================
+   CONSTELACIÓN
+========================================= */
+
+.constelacion {
+
+    position:
+
+        relative;
+
+    width:
+
+        500px;
+
+    max-width:
+
+        90vw;
+
+    height:
+
+        350px;
+
+    margin:
+
+        0
+        auto
+        30px;
+
+}
+
+
+.lineas-constelacion {
+
+    position:
+
+        absolute;
+
+    inset:
+
+        0;
+
+    width:
+
+        100%;
+
+    height:
+
+        100%;
+
+}
+
+
+.lineas-constelacion line {
+
+    stroke:
+
+        #c4b5fd;
+
+    stroke-width:
+
+        1;
+
+    opacity:
+
+        0;
+
+    stroke-dasharray:
+
+        500;
+
+    stroke-dashoffset:
+
+        500;
+
+}
+
+
+.escena.activa
+.lineas-constelacion line {
+
+    animation:
+
+        dibujarLinea
+        2s
+        ease
+        forwards;
+
+}
+
+
+@keyframes dibujarLinea {
+
+    to {
+
+        stroke-dashoffset:
+
+            0;
+
+        opacity:
+
+            0.6;
+
+    }
+
+}
+
+
+.estrella {
+
+    position:
+
+        absolute;
+
+    width:
+
+        12px;
+
+    height:
+
+        12px;
+
+    border-radius:
+
+        50%;
+
+    background:
+
+        white;
+
+    box-shadow:
+
+        0
+        0
+        20px
+        8px
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    opacity:
+
+        0;
+
+}
+
+
+.escena.activa
+.estrella {
+
+    animation:
+
+        aparecerEstrella
+        1s
+        ease
+        forwards;
+
+}
+
+
+.estrella1 {
+
+    left:
+
+        19%;
+
+    top:
+
+        22%;
+
+    animation-delay:
+
+        0.5s;
+
+}
+
+
+.estrella2 {
+
+    left:
+
+        39%;
+
+    top:
+
+        11%;
+
+    animation-delay:
+
+        0.8s;
+
+}
+
+
+.estrella3 {
+
+    left:
+
+        59%;
+
+    top:
+
+        22%;
+
+    animation-delay:
+
+        1.1s;
+
+}
+
+
+.estrella4 {
+
+    left:
+
+        78%;
+
+    top:
+
+        11%;
+
+    animation-delay:
+
+        1.4s;
+
+}
+
+
+.estrella5 {
+
+    left:
+
+        49%;
+
+    top:
+
+        69%;
+
+    animation-delay:
+
+        1.7s;
+
+}
+
+
+.estrella6 {
+
+    left:
+
+        69%;
+
+    top:
+
+        51%;
+
+    animation-delay:
+
+        2s;
+
+}
+
+
+@keyframes aparecerEstrella {
+
+    from {
+
+        opacity:
+
+            0;
+
+        transform:
+
+            scale(0);
+
+    }
+
+    to {
+
+        opacity:
+
+            1;
+
+        transform:
+
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================
+   ESCENA UNIVERSO
+========================================= */
+
+.universo-mensaje {
+
+    padding:
+
+        30px;
+
+}
+
+
+.corazon-estrellas {
+
+    font-size:
+
+        80px;
+
+    color:
+
+        #e9d5ff;
+
+    text-shadow:
+
+        0
+        0
+        40px
+        #c084fc;
+
+    animation:
+
+        brillo
+        2s
+        ease-in-out
+        infinite;
+
+}
+
+
+.universo-mensaje p {
+
+    font-size:
+
+        1.15rem;
+
+    color:
+
+        #d8d0e8;
+
+    line-height:
+
+        1.8;
+
+}
+
+
+.universo-mensaje
+.destacado {
+
+    color:
+
+        #f0abfc;
+
+    font-size:
+
+        1.3rem;
+
+    margin-top:
+
+        15px;
+
+}
+
+
+@keyframes brillo {
+
+    0%,
+    100% {
+
+        opacity:
+
+            0.6;
+
+        transform:
+
+            scale(1);
+
+    }
+
+    50% {
+
+        opacity:
+
+            1;
+
+        transform:
+
+            scale(1.15);
+
+    }
+
+}
+
+
+/* =========================================
+   JARDÍN
+========================================= */
+
+.jardin {
+
+    position:
+
+        relative;
+
+    width:
+
+        600px;
+
+    max-width:
+
+        95vw;
+
+    height:
+
+        320px;
+
+    margin:
+
+        0
+        auto
+        25px;
+
+    overflow:
+
+        hidden;
+
+    border-radius:
+
+        30px;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            #080516,
+            #160b29
+        );
+
+    box-shadow:
+
+        inset
+        0
+        0
+        80px
+        rgba(
+            124,
+            58,
+            237,
+            0.2
+        );
+
+}
+
+
+.montana {
+
+    position:
+
+        absolute;
+
+    bottom:
+
+        50px;
+
+    width:
+
+        100%;
+
+    height:
+
+        120px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #110b25,
+            #251342
+        );
+
+    clip-path:
+
+        polygon(
+            0 100%,
+            25% 40%,
+            45% 80%,
+            65% 25%,
+            100% 100%
+        );
+
+}
+
+
+.luna-jardin {
+
+    position:
+
+        absolute;
+
+    top:
+
+        25px;
+
+    right:
+
+        40px;
+
+    font-size:
+
+        55px;
+
+}
+
+
+.suelo {
+
+    position:
+
+        absolute;
+
+    bottom:
+
+        0;
+
+    width:
+
+        100%;
+
+    height:
+
+        60px;
+
+    background:
+
+        #090c14;
+
+}
+
+
+.luciernaga {
+
+    position:
+
+        absolute;
+
+    font-size:
+
+        18px;
+
+    animation:
+
+        volar
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.l1 {
+
+    top:
+
+        30%;
+
+    left:
+
+        15%;
+
+}
+
+
+.l2 {
+
+    top:
+
+        45%;
+
+    left:
+
+        35%;
+
+    animation-delay:
+
+        1s;
+
+}
+
+
+.l3 {
+
+    top:
+
+        25%;
+
+    left:
+
+        60%;
+
+    animation-delay:
+
+        2s;
+
+}
+
+
+.l4 {
+
+    top:
+
+        50%;
+
+    left:
+
+        80%;
+
+    animation-delay:
+
+        3s;
+
+}
+
+
+@keyframes volar {
+
+    0%,
+    100% {
+
+        transform:
+
+            translate(
+                0,
+                0
+            );
+
+        opacity:
+
+            0.2;
+
+    }
+
+    50% {
+
+        transform:
+
+            translate(
+                25px,
+                -30px
+            );
+
+        opacity:
+
+            1;
+
+        filter:
+
+            drop-shadow(
+                0
+                0
+                15px
+                #fde68a
+            );
+
+    }
+
+}
+
+
+/* =========================================
+   FLOR
+========================================= */
+
+.flor {
+
+    position:
+
+        absolute;
+
+    bottom:
+
+        35px;
+
+    left:
+
+        50%;
+
+    width:
+
+        120px;
+
+    height:
+
+        180px;
+
+    transform:
+
+        translateX(-50%);
+
+}
+
+
+.tallo {
+
+    position:
+
+        absolute;
+
+    bottom:
+
+        0;
+
+    left:
+
+        58px;
+
+    width:
+
+        6px;
+
+    height:
+
+        120px;
+
+    background:
+
+        linear-gradient(
+            to right,
+            #166534,
+            #4ade80
+        );
+
+    transform-origin:
+
+        bottom;
+
+    transform:
+
+        scaleY(0);
+
+    transition:
+
+        transform
+        2s
+        ease;
+
+}
+
+
+.escena.activa
+.tallo {
+
+    transform:
+
+        scaleY(1);
+
+}
+
+
+.petalo {
+
+    position:
+
+        absolute;
+
+    width:
+
+        45px;
+
+    height:
+
+        65px;
+
+    border-radius:
+
+        50%;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f9a8d4,
+            #c026d3
+        );
+
+    top:
+
+        15px;
+
+    left:
+
+        38px;
+
+    transform-origin:
+
+        bottom;
+
+    opacity:
+
+        0;
+
+}
+
+
+.escena.activa
+.petalo {
+
+    animation:
+
+        florecer
+        1s
+        ease
+        forwards;
+
+}
+
+
+.p1 {
+
+    transform:
+
+        rotate(0deg);
+
+    animation-delay:
+
+        1.5s !important;
+
+}
+
+
+.p2 {
+
+    transform:
+
+        rotate(90deg);
+
+    animation-delay:
+
+        1.7s !important;
+
+}
+
+
+.p3 {
+
+    transform:
+
+        rotate(180deg);
+
+    animation-delay:
+
+        1.9s !important;
+
+}
+
+
+.p4 {
+
+    transform:
+
+        rotate(270deg);
+
+    animation-delay:
+
+        2.1s !important;
+
+}
+
+
+.centro-flor {
+
+    position:
+
+        absolute;
+
+    top:
+
+        43px;
+
+    left:
+
+        52px;
+
+    width:
+
+        30px;
+
+    height:
+
+        30px;
+
+    border-radius:
+
+        50%;
+
+    background:
+
+        #fef08a;
+
+    box-shadow:
+
+        0
+        0
+        20px
+        #fef08a;
+
+    z-index:
+
+        5;
+
+}
+
+
+@keyframes florecer {
+
+    from {
+
+        opacity:
+
+            0;
+
+        transform:
+
+            scale(0);
+
+    }
+
+    to {
+
+        opacity:
+
+            1;
+
+        transform:
+
+            scale(1);
+
+    }
+
+}
+
+
+.hoja {
+
+    position:
+
+        absolute;
+
+    width:
+
+        50px;
+
+    height:
+
+        20px;
+
+    background:
+
+        #22c55e;
+
+    border-radius:
+
+        100% 0;
+
+    bottom:
+
+        50px;
+
+}
+
+
+.hoja1 {
+
+    left:
+
+        15px;
+
+    transform:
+
+        rotate(-25deg);
+
+}
+
+
+.hoja2 {
+
+    right:
+
+        15px;
+
+    transform:
+
+        rotate(25deg)
+        scaleX(-1);
+
+}
+
+
+/* =========================================
+   CARTA
+========================================= */
+
+.carta {
+
+    max-width:
+
+        550px;
+
+    margin:
+
+        auto;
+
+    padding:
+
+        35px;
+
+    border-radius:
+
+        25px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.95
+        );
+
+    color:
+
+        #3b1d5a;
+
+    box-shadow:
+
+        0
+        25px
+        70px
+        rgba(
+            0,
+            0,
+            0,
+            0.5
+        );
+
+}
+
+
+.icono-carta {
+
+    font-size:
+
+        50px;
+
+    margin-bottom:
+
+        10px;
+
+}
+
+
+.carta h2 {
+
+    color:
+
+        #7c3aed;
+
+}
+
+
+.carta p {
+
+    color:
+
+        #51445f;
+
+    line-height:
+
+        1.7;
+
+    margin:
+
+        12px
+        0;
+
+}
+
+
+.carta
+.mensaje-especial {
+
+    color:
+
+        #7c3aed;
+
+    font-weight:
+
+        600;
+
+}
+
+
+.separador {
+
+    margin:
+
+        20px
+        0;
+
+    color:
+
+        #c084fc;
+
+}
+
+
+.firma {
+
+    margin-top:
+
+        25px;
+
+    font-style:
+
+        italic;
+
+    color:
+
+        #a855f7;
+
+    font-size:
+
+        1.2rem;
+
+}
+
+
+/* =========================================
+   FINAL
+========================================= */
+
+.final-corazon {
+
+    font-size:
+
+        100px;
+
+    animation:
+
+        latido
+        1.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.escena.activa
+.final-corazon {
+
+    animation:
+
+        aparecerFinal
+        2s
+        ease;
+
+}
+
+
+.final-pequeno {
+
+    max-width:
+
+        450px;
+
+    margin:
+
+        auto;
+
+    font-size:
+
+        1.1rem;
+
+    color:
+
+        #d8d0e8;
+
+    line-height:
+
+        1.8;
+
+}
+
+
+.codigo-final {
+
+    margin-top:
+
+        30px;
+
+    font-family:
+
+        monospace;
+
+    color:
+
+        #a78bfa;
+
+    line-height:
+
+        1.8;
+
+}
+
+
+@keyframes aparecerFinal {
+
+    from {
+
+        transform:
+
+            scale(0);
+
+        opacity:
+
+            0;
+
+    }
+
+    to {
+
+        transform:
+
+            scale(1);
+
+        opacity:
+
+            1;
+
+    }
+
+}
+
+
+/* =========================================
+   PARTICULAS
+========================================= */
+
+.particula {
+
+    position:
+
+        fixed;
+
+    bottom:
+
+        -30px;
+
+    pointer-events:
+
+        none;
+
+    z-index:
+
+        30;
+
+    font-size:
+
+        20px;
+
+    animation:
+
+        subir
+        6s
+        linear
+        forwards;
+
+}
+
+
+@keyframes subir {
+
+    0% {
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+        opacity:
+
+            0;
+
+    }
+
+    10% {
+
+        opacity:
+
+            1;
+
+    }
+
+    100% {
+
+        transform:
+
+            translateY(-110vh)
+            scale(0)
+            rotate(360deg);
+
+        opacity:
+
+            0;
+
+    }
+
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (
+    max-width: 600px
+) {
+
+
+    .luna {
+
+        width:
+
+            70px;
+
+        height:
+
+            70px;
+
+        right:
+
+            7%;
+
+    }
+
+
+    .luna::after {
+
+        width:
+
+            65px;
+
+        height:
+
+            65px;
+
+        left:
+
+            20px;
+
+        top:
+
+            -8px;
+
+    }
+
+
+    .constelacion {
+
+        height:
+
+            260px;
+
+    }
+
+
+    .jardin {
+
+        height:
+
+            260px;
+
+    }
+
+
+    .carta {
+
+        padding:
+
+            25px
+            20px;
+
+        max-height:
+
+            70vh;
+
+        overflow-y:
+
+            auto;
+
+    }
+
+
+    .carta p {
+
+        font-size:
+
+            0.9rem;
+
+    }
+
+
+    .boton {
+
+        padding:
+
+            13px
+            25px;
+
+    }
+
+}
